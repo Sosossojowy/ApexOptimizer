@@ -2,6 +2,8 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #292a2b;
+  color: white;
 }
 .container {
   display: flex;
@@ -12,15 +14,16 @@ body {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: #292a2b;
 }
 h1 {
   text-align: center;
 }
-form {
+#formula {
   margin-bottom: 20px;
   display: flex;
   align-content: center;
+  gap: 15px;
 }
 label {
   display: block;
@@ -42,13 +45,17 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
 }
-input[type="submit"] {
+#Add {
   background-color: #4caf50;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+#button1 {
+  display: flex;
+  align-items: center;
 }
 table {
   width: 100%;
@@ -61,6 +68,6 @@ td {
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }

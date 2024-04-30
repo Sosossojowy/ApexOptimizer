@@ -4,7 +4,10 @@ const selectors = {
   knocks: `knocksSelected`,
   legend: `legendSelected`,
   damage: `damageSelected`,
+  weapontype: `weaponSelected`,
 };
+const quests = [];
+
 const hide = (...ids) => {
   for (const id of ids)
     document.querySelector(`#${id}`).classList.add(`hidden`);
@@ -30,6 +33,14 @@ questSelector.onchange = () => {
     show(selectors.legend, selectors.damage);
   } else if (typ === `Knockdowns`) {
     show(selectors.legend, selectors.knocks);
+  } else if (typ === `WeaponDamage`) {
+    show(selectors.weapontype, selectors.damage);
+  } else if (typ === `WeaponKills`) {
+    show(selectors.weapontype, selectors.kills);
+  } else if (typ === `WeaponKnocks`) {
+    show(selectors.weapontype, selectors.knocks);
   }
 };
 questSelector.dispatchEvent(new Event(`change`));
+
+
