@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizator wyzwań Apex Legends</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Analizator wyzwań Apex Legends</h1>
+    <form>
+        <div>
+            <label for="quest">Wybierz typ questa</label>
+        <select id="quest">
+            <option value="DamageDealt">DamageDealt</option>
+            <option value="Played">Played</option>
+            <option value="Kills">Kills</option>
+            <option value="Knockdowns">Knockdowns</option>
+        </select>
+        </div>
+        
+        <div id="legendSelected" class="hidden">
+            <label for="Legend">Wybierz Legenda</label>
+            <select id="Legend">
+                <option value="Ash">Ash</option>
+                <option value="mirage">mirage</option>
+                <option value="octane">octane</option>
+            </select>
+        </div>
+
+        <div id="killsSelected" class="hidden">
+            <label for="Kill">Wybierz Killa</label>
+            <input type="number" name="" id="Kill">
+        </div>
+
+        <div id="knocksSelected" class="hidden">
+            <label for="Knock">Wybierz Knocka</label>
+            <input type="number" name="" id="Knock">
+        </div>
+
+        <div id="gamesSelected" class="hidden">
+            <label for="Game">Wybierz Gamea</label>
+            <input type="number" name="" id="Game">
+        </div>
+
+        <div id="damageSelected" class="hidden">
+            <label for="Damage">Wybierz damagea</label>
+            <input type="number" name="" id="Damage">
+        </div>
+        <div>
+
+            <input type="submit" value="Dodaj">
+        </div>
+    </form>
+
+    <table id="challengesTable">
+        <caption>Wprowadzone wyzwania:</caption>
+        <thead>
+            <tr>
+                <th>Wyzwanie</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
