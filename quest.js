@@ -2,6 +2,9 @@ class Quest{
     constructor(type){
         this.type = type
     }
+    toString(){
+        return `quest of type ${this.type}`
+    }
 }
 class LegendDamageQuest extends Quest{
     static TYPE = `DamageDealt`
@@ -15,14 +18,25 @@ class LegendDamageQuest extends Quest{
         this.legend = legend;
         this.damage = damage;
     }
+    toString(){
+        return `Deal ${this.damage} damage as ${this.legend}`
+    }
 }
 
 class WeaponDamageQuest extends Quest{
     static TYPE = `WeaponDamage`
+    /**
+     * 
+     * @param {string} weapon 
+     * @param {number} damage 
+     */
     constructor(weapon, damage){
         super(WeaponDamageQuest.TYPE)
         this.weapon = weapon;
         this.damage = damage;
+    }
+    toString(){
+        return `Deal ${this.damage} damage with ${this.weapon}`
     }
 }
 
@@ -38,14 +52,25 @@ class LegendKillsQuest extends Quest{
         this.legend = legend;
         this.kills = kills;
     }
+    toString(){
+        return `Get ${this.kills} kills as ${this.legend}`
+    }
 }
 
 class WeaponKillsQuest extends Quest{
     static TYPE = `WeaponKills`
+    /**
+     * 
+     * @param {string} weapon 
+     * @param {number} kills 
+     */
     constructor(weapon, kills){
         super(WeaponKillsQuest.TYPE)
         this.weapon = weapon;
         this.kills = kills;
+    }
+    toString(){
+        return `Get ${this.kills} kills with ${this.weapon}`
     }
 }
 
@@ -61,21 +86,31 @@ class LegendKnocksQuest extends Quest{
         this.legend = legend;
         this.knocks = knocks;
     }
+    toString(){
+        return `Get ${this.knocks} knockdowns as ${this.legend}`
+    }
 }
 
 class WeaponKnocksQuest extends Quest{
     static TYPE = `WeaponKnocks`
+    /**
+     * 
+     * @param {string} weapon 
+     * @param {number} knocks 
+     */
     constructor(weapon, knocks){
         super(WeaponKnocksQuest.TYPE)
         this.weapon = weapon;
         this.knocks = knocks;
+    }
+    toString(){
+        return `Get ${this.knocks} knockdowns with ${this.weapon}`
     }
 }
 
 class LegendPlaysQuest extends Quest{
     static TYPE = `Played`
     /**
-     * 
      * @param {string} legend 
      * @param {number} plays 
      */
@@ -83,5 +118,8 @@ class LegendPlaysQuest extends Quest{
         super(LegendPlaysQuest.TYPE)
         this.legend = legend;
         this.plays = plays;
+    }
+    toString(){
+        return `Play ${this.plays} games as ${this.legend}`
     }
 }
