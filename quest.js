@@ -1,5 +1,9 @@
 class Quest{
+    static Id = 0;
+
     constructor(type){
+        Quest.Id ++;
+        this.id = Quest.Id
         this.type = type
     }
     toString(){

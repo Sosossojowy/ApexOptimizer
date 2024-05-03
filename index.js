@@ -62,6 +62,18 @@ const save = () => {
   localStorage.setItem(`savedData`, JSON.stringify(quests));
 };
 
+/**
+ * 
+ * @param {number} id 
+ */
+const deleteQuest = (id) => {
+  
+  const index = quests.findIndex((v)=>v.id === id)
+  if(index<0) return;
+  quests.splice(index,1);
+  renderQuests();
+}
+
 /**@type {HTMLSelectElement} */
 const questSelector = document.querySelector(`#quest`);
 questSelector.onchange = () => {
@@ -184,8 +196,13 @@ const renderQuests = () => {
   for (const quest of quests) {
     const tr = document.createElement(`tr`);
     const td = document.createElement(`td`);
-    tr.append(td);
+    const deleteTd = document.createElement(`td`)
+    const deleteButton = document.createElement(`button`)
+    tr.append(td,deleteTd);
     td.innerText = `${quest}`;
+    deleteTd.append(deleteButton)
+    deleteButton.innerText = (`Delete`)
+    deleteButton.onclick = () => deleteQuest(quest.id)
     list.append(tr);
   }
 };
