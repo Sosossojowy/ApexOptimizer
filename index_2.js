@@ -312,7 +312,7 @@ const renderQuests = () => {
     deleteTd.append(deleteButton);
     deleteButton.innerText = `Delete`;
     deleteButton.onclick = () => deleteQuest(quest.id);
-    list.append(tr);
+    list.prepend(tr);
   }
   console.log(tasks)
 };
