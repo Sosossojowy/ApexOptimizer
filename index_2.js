@@ -290,17 +290,10 @@ const renderQuests = () => {
     const tr = document.createElement(`tr`);
     const td = document.createElement(`td`);
     const doneTd = document.createElement(`td`);
-    const doneButton = document.createElement(`button`);
 
     tr.append(td, doneTd);
     td.innerText = `${task.legend} with ${task.weapon} (${task.quests.length})`;
-    doneTd.append(doneButton);
-    doneButton.innerText = `Done`;
-    doneButton.onclick = () => {
-        for(const quest of task.quests){
-            deleteQuest(quest.id)
-        }
-    };
+
     taskList.append(tr);
   }
   /** @type {HTMLTableSectionElement} */
